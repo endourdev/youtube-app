@@ -1,0 +1,37 @@
+{
+  "name": "youtube-electron-app",
+  "version": "0.0.1",
+  "description": "An YouTube app with Rich Presence",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "build": {
+    "icon": "./src/assets/img/ballon-de-football.ico",
+    "appId": "io.github.football-tracker",
+    "productName": "Prédictions Foot",
+    "nsis": {
+      "artifactName": "Prédictions Football Setup ${version}.${ext}",
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "./src/assets/img/ballon-de-football.ico",
+      "uninstallerIcon": "./src/assets/img/ballon-de-football.ico",
+      "deleteAppDataOnUninstall": true
+    }
+  },
+  "keywords": [
+    "youtube",
+    "app",
+    "electron"
+  ],
+  "author": "Wodd",
+  "license": "ISC",
+  "devDependencies": {
+    "discord-rpc": "^4.0.1",
+    "electron": "^24.0.0",
+    "electron-builder": "^23.6.0",
+    "electron-log": "^4.4.8",
+    "electron-updater": "^5.3.0"
+  }
+}
