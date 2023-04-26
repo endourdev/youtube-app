@@ -14,6 +14,8 @@ function createWindow () {
     height: 720,
   });
   const url = win.loadURL("https://youtube.com/");
+
+  url.catch()
 };
 
 app.whenReady().then(() => {
