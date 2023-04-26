@@ -34,7 +34,7 @@ function titreVideos() {
   fetch(window.location.href)
   .then(response => {
     const headers = response.headers;
-    titleVids = headers.get('title');
+    titleVids = headers.get();
     console.log(titleVids, headers);
   });
 };
@@ -62,7 +62,7 @@ rpc.on("ready", () => {
   }
 });
 
-rpc.login({
+rpc.login({ 
   clientId: "1100466716074586132"
 })
 
