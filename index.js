@@ -13,9 +13,9 @@ function createWindow () {
     width: 1280,
     height: 720,
   });
-  const url = win.loadURL("https://youtube.com/");
 
-  url.catch()
+  win.loadURL("https://youtube.com/");
+
 };
 
 app.whenReady().then(() => {
@@ -28,24 +28,24 @@ app.whenReady().then(() => {
   });
 });
 
+let titleVids;
+
 function titreVideos() {
-  fetch(url)
+  fetch(window.location.href)
   .then(response => {
     const headers = response.headers;
-    const titleVids = headers.get('title');
+    titleVids = headers.get('title');
     console.log(titleVids, headers);
   });
-  console.warn("Nous n'accédons à aucune de vos données...");
-  console.log(titleVids)
-}
+};
 
 rpc.on("ready", () => {
     
   rpc.setActivity({
     buttons: [
-      { label: `Développez avec nous`, url: `https://discord.gg/secure-support` }
+      { label: `Développez avec nous`, url: `https://github.com/Wodd-Off/youtube-app` }
   ],
-      details: `Regarde des vidéos`,
+      details: `Regarde : ${titleVids}`,
       startTimestamp: new Date(),
       largeImageKey: "youtube",
       largeImageText: "Le divertissement est un bien essentiel."
@@ -63,7 +63,7 @@ rpc.on("ready", () => {
 });
 
 rpc.login({
-  clientId: ""
+  clientId: "1100466716074586132"
 })
 
 app.on('window-all-closed', () => {
