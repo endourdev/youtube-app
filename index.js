@@ -28,16 +28,7 @@ app.whenReady().then(() => {
   });
 });
 
-let titleVids;
-
-function titreVideos() {
-  fetch(window.location.href)
-  .then(response => {
-    const headers = response.headers;
-    titleVids = headers.get();
-    console.log(titleVids, headers);
-  });
-};
+app.on("ready", () => {
 
 rpc.on("ready", () => {
     
@@ -45,26 +36,21 @@ rpc.on("ready", () => {
     buttons: [
       { label: `Développez avec nous`, url: `https://github.com/Wodd-Off/youtube-app` }
   ],
-      details: `Regarde : ${titleVids}`,
+      details: `Regarde des vidéos`,
       startTimestamp: new Date(),
       largeImageKey: "youtube",
       largeImageText: "Le divertissement est un bien essentiel."
       
       
   });
-  const terminal_msg = "Le rich presence est en place regarde ton Discord !"
-  console.log(terminal_msg);
-  const ok = true
-  if (ok === true) {
-    console.log(ok)
-  } else {
-    console.warn("Le rich presence n'as pas été mis en place !")
-  }
-});
+    const terminal_msg = "Le rich presence est en place regarde ton Discord !"
+    console.log(terminal_msg);
+  });
+  rpc.login({ 
+    clientId: "1100466716074586132"
+  });
 
-rpc.login({ 
-  clientId: "1100466716074586132"
-})
+});
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
