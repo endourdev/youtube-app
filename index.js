@@ -63,7 +63,7 @@ rpc.on("ready", () => {
 });
 
 rpc.login({
-  clientId: "1100466716074586132"
+  clientId: ""
 })
 
 app.on('window-all-closed', () => {
