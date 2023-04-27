@@ -28,6 +28,18 @@ app.whenReady().then(() => {
   });
 });
 
+let titleVids;
+
+function titreVideos() {
+  fetch(window.location.href)
+  .then(response => {
+    const headers = response.headers;
+    let titleVids = headers.get('title');
+    console.log(titleVids, headers);
+  });
+  console.log(titleVids)
+};
+
 app.on("ready", () => {
 
 rpc.on("ready", () => {
@@ -47,7 +59,7 @@ rpc.on("ready", () => {
     console.log(terminal_msg);
   });
   rpc.login({ 
-    clientId: "1100466716074586132"
+    clientId: "1101068445673586709"
   });
 
 });
