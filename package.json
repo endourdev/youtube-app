@@ -1,6 +1,6 @@
 {
   "name": "youtube-electron-app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An YouTube app with Rich Presence",
   "main": "index.js",
   "scripts": {
