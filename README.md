@@ -14,8 +14,9 @@ npm install
 ```
 
 ### Vous devez faire quelque chagement :
-
-## Dans src/config/config.demo.json d'abord le renommer config.json puis entrez les bonnes valeurs
+```
+Dans src/config/config.demo.json d'abord le renommer config.json puis entrez les bonnes valeurs
+```
 
 ### Démarrez l'application en faisant
 ````
