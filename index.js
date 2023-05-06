@@ -1,11 +1,12 @@
-const { app, BrowserWindow } = require('electron');
-const path = require('path');
+// We import all modules here.
+const { app, BrowserWindow } = require("electron");
 const RPC = require("discord-rpc");
-const { url } = require('inspector');
+const config = require("./src/config/config.json");
 const rpc = new RPC.Client({
     transport: "ipc"
 });
 
+// Main function. He define title and others stuff.
 function createWindow () {
   const win = new BrowserWindow({
     title: "YouTube Browser",
@@ -18,6 +19,7 @@ function createWindow () {
 
 };
 
+// We create main window here.
 app.whenReady().then(() => {
   createWindow()
 
@@ -28,39 +30,31 @@ app.whenReady().then(() => {
   });
 });
 
-let titleVids;
-
-function titreVideos() {
-  fetch(window.location.href)
-  .then(response => {
-    const headers = response.headers;
-    let titleVids = headers.get('title');
-    console.log(titleVids, headers);
-  });
-  console.log(titleVids)
-};
-
 app.on("ready", () => {
 
-rpc.on("ready", () => {
-    
-  rpc.setActivity({
-    buttons: [
-      { label: `Développez avec nous`, url: `https://github.com/Wodd-Off/youtube-app` }
-  ],
+  rpc.on("ready", () => {
+
+    // We set button.
+    rpc.setActivity({
+      buttons: [
+        { label: `Développez avec nous`, url: `${config.githubURL}` },
+        { label : `Rejoignez le suppirt`, url: `${config.discord}`}
+    ],
+
+      // We set all details for your rpc.
       details: `Regarde des vidéos`,
       startTimestamp: new Date(),
       largeImageKey: "youtube",
       largeImageText: "Le divertissement est un bien essentiel."
-      
-      
+        
+        
+    });
   });
-    const terminal_msg = "Le rich presence est en place regarde ton Discord !"
-    console.log(terminal_msg);
-  });
-  rpc.login({ 
-    clientId: "1101068445673586709"
-  });
+
+    // Connect to Discord with discord-rpc module
+    rpc.login({ 
+      clientId: config.clientId,
+    });
 
 });
 
