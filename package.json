@@ -1,6 +1,6 @@
 {
   "name": "youtube-electron-app",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An YouTube app with Rich Presence",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "appId": "io.github.football-tracker",
     "productName": "Youtube Watcher",
     "nsis": {
-      "artifactName": "Youtube Watcher Setup ${version}.${ext}",
+      "artifactName": "Youtube-Watcher-Setup-${version}-x64.${ext}",
       "oneClick": false,
       "perMachine": false,
       "allowToChangeInstallationDirectory": true,
