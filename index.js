@@ -37,7 +37,6 @@ app.on("ready", () => {
     // We set button.
     rpc.setActivity({
       buttons: [
-        { label: `Développez avec nous`, url: `${config.githubURL}` },
         { label : `Rejoignez le support`, url: `${config.discord}`}
     ],
 

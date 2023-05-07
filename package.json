@@ -1,7 +1,7 @@
 {
-  "name": "youtube-electron-app",
-  "version": "0.0.3",
-  "description": "An YouTube app with Rich Presence",
+  "name": "youtube-app",
+  "version": "0.0.4",
+  "description": "YouTube Watcher",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
